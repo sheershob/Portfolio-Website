@@ -1,0 +1,71 @@
+.ratingsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 15px;
+    /* height: 198px; */
+    background-color: transparent;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.ratingsBox{
+    margin: 20px;
+    padding: 10px;
+    height: 250px;
+    width: 290px;
+    background-color: rgb(119, 77, 14);
+    border-radius: 10px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 700;
+    color: burlywood;
+    /* box-shadow: ; */
+}
+
+.progress-bar {
+    display: flex;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 15px;
+  }
+  
+  .progress-bar-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    img{        
+        margin: 20px;
+        width: 25vw;
+        border: 3px solid;
+        border-color: #333;
+        border-radius: 5px;
+      }
+}
+  
+  
+  .wins {
+    background-color: #19a51d;
+  }  
+  .draws {
+    background-color: #a8a8a8; 
+  }  
+  .losses {
+    background-color: #d21f12;
+  }
+  a{
+    margin: 0;
+  }

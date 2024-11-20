@@ -1,0 +1,49 @@
+.header {
+    /* background-color: #6200ea; */
+    padding: 1rem;
+    color: white;
+    background-color: #333;
+    position: fixed; /* Fix the navbar to the top of the page */
+    top: 0; /* Ensure it starts at the top */
+    left: 0; /* Ensure it spans the full width */
+    width: 100%; /* Full-width navbar */
+    z-index: 1000; /* Ensure it stays above other elements */
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .site-name {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    margin-right: 45px;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-list li {
+    display: inline;
+  }
+  
+  .nav-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-list a:hover {
+    /* text-decoration: underline; */
+    color: blanchedalmond;
+    transition: 0.5s;
+  }

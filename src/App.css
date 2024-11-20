@@ -1,0 +1,44 @@
+body{
+  background-color: darkslategray;
+  color: bisque;
+  width: 100%;
+}
+
+main {
+  flex: 1; /* Makes the main content grow to take up available space */
+  margin-top: 10vh;
+  padding: 2rem;
+  width: inherit;
+}
+
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+  /* background-color: darkslategray; */
+  /* text-align: center; */
+}
+
+p{
+  font-size: large;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  li{
+    /* gap: 5px; */
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+    background-color: cadetblue;
+    border-radius: 5px;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+

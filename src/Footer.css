@@ -1,0 +1,36 @@
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    min-width: 100%;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  a{
+    margin: 15px;
+  }
+
+  .social-links {
+    margin: 1rem;
+  }
+  
+  .social-links{
+    color: #ffffff;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+  }
+  
+  .social-links a:hover {
+    /* text-decoration: underline; */
+    color: cornflowerblue;
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+  }
