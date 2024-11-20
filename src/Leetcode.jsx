@@ -47,10 +47,10 @@ const Leetcode = () => {
         redirect: 'follow',
       };
 
-      let response = await fetch(proxyUrl + targetUrl, requestOptions);
+       let response = await fetch(targetUrl, requestOptions);
       if (!response.ok) {
         // If first fetch fails, try the second one
-        response = await fetch(targetUrl, requestOptions);
+        response = await fetch(proxyUrl + targetUrl, requestOptions);
         if (!response.ok) {
           throw new Error('Unable to fetch the User details from both sources');
         }
