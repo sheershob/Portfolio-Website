@@ -3,7 +3,8 @@
     color: white;
     padding: 1rem 0;
     text-align: center;
-    position: fixed;
+    /* position: fixed; */
+    /* visibility: hidden; */
     left: 0;
     bottom: 0;
     width: 100%;
