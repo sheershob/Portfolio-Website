@@ -47,14 +47,19 @@ const Leetcode = () => {
         redirect: 'follow',
       };
 
-      const response = await fetch(proxyUrl + targetUrl, requestOptions);
+       let response = await fetch(targetUrl, requestOptions);
       if (!response.ok) {
-        throw new Error('Unable to fetch the User details');
+        // If first fetch fails, try the second one
+        response = await fetch(proxyUrl + targetUrl, requestOptions);
+        if (!response.ok) {
+          throw new Error('Unable to fetch the User details from both sources');
+        }
       }
 
       const parsedData = await response.json();
       console.log('Logging data: ', parsedData);
       setStats(parsedData); // Save fetched data in state
+
     } catch (error) {
       console.error('Error fetching stats:', error);
       setError('Failed to fetch stats. Please try again later.');
