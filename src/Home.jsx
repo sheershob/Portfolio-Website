@@ -1,5 +1,5 @@
 import React from 'react'
-import pic from './assets/me.jpg'
+import pic from './assets/me.webp'
 
 const Home = () => {
   return (
