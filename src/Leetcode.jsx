@@ -107,7 +107,7 @@ const Leetcode = () => {
       <h1>LeetCode Stats</h1>
       {error && <p className="error">{error}</p>}
       {!stats && !error && <p>Loading stats...</p>}
-      { <h2>Peak contest rating: 1671</h2> }
+      { <h2>Peak contest rating: 1730</h2> }
       {stats && displayData(stats)}
       <p>
       I began practicing on Leetcode around mid-2023, primarily solving problems in Java and later in C++ and Python to strengthen my grasp of other languages. 

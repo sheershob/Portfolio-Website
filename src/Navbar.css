@@ -29,7 +29,7 @@
     list-style-type: none;
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 0.7vw;
   }
   
   .nav-list li {
@@ -47,3 +47,45 @@
     color: blanchedalmond;
     transition: 0.5s;
   }
+  @media screen and (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 200px;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    .nav-list.show {
+        display: flex; /* Show when toggled */
+    }
+
+    .menu-toggle {
+        display: flex !important;
+    }
+}
+.menu-toggle {
+  display: none; /* Hide by default */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle div {
+  width: 30px;
+  height: 3px;
+  background-color: white; /* Adjust color as needed */
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Make the menu visible on small screens */
+/* @media screen and (max-width: 768px) {
+  .menu-toggle {
+      display: flex;
+  }
+} */

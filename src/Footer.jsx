@@ -21,7 +21,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="contact-info">
-          <p>Sheersho Banerjee © 2024</p>
+          <p>Sheersho Banerjee © 2025</p>
         </div>
       </div>
     </footer>
