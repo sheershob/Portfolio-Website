@@ -1,12 +1,15 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import './Hobbies.css'
-import win1 from './assets/win1.jpg'
-import win2 from './assets/win2.jpg'
-import win3 from './assets/win3.jpg'
-import win4 from './assets/win4.png'
-import win5 from './assets/win5.png'
-import win6 from './assets/win6.png'
+import win1 from './assets/win1.webp'
+import win2 from './assets/win2.webp'
+import win3 from './assets/win3.webp'
+import win4 from './assets/win4.webp'
+import win5 from './assets/win5.webp'
+import win6 from './assets/win6.webp'
+import football1 from './assets/football1.webp'
+import football2 from './assets/football2.webp'
+import football3 from './assets/football3.webp'
 
 // const Hobbies = () => {
 //   return (
@@ -144,6 +147,7 @@ const Hobbies = ({ username }) => {
       )}
       <p>Check out my <a href="https://www.chess.com/member/sheershobanerjee">chess.com</a> profile</p>
       <h2>Some Tournament Victories:</h2>
+      <p>Secured first place in the Inter-batch Chess Tournament on three consecutive years (2025, 2024, and 2023).</p>
       <div className="gallery">
           <img src={win1} alt="Inter-batch Tounament 2023" />
           <img src={win3} alt="Inter-batch Tounament 2023" />
@@ -157,6 +161,12 @@ const Hobbies = ({ username }) => {
       <p>My football journey spans years, from playing in local parks and schools to structured competitions college. Primarily a defender, I leverage my reach to effectively disrupt opposing plays.  
         Recently, I had the privilege of captaining my batch in the 2025 inter-batch sports tournament in JNU, an experience that re-ignited my passion for the sport.  
         Beyond the thrill of the game, football has been an invaluable tool for maintaining peak physical fitness.</p>
+
+        <div className="gallery">
+          <img src={football1} alt="Inter-batch football Tounament 2025" />
+          <img src={football2} alt="Inter-batch football Tounament 2025" />
+          <img src={football3} alt="Inter-batch football Tounament 2025" />          
+      </div>
       
       <h1>Lawn Tennis</h1>
       <p>I played tennis at the DDA Sports Complex Academy from Class VI to X, during which the sport became an integral part of my life. Some of my fondest memories include early mornings during vacations when my mother would drop me off at 6 AM to practice and play with friends. Over the years, I had the opportunity to participate in several tournaments, representing my school with pride. My best performance came when I secured fourth place in a zonal tournament, an achievement that remains close to my heart. Tennis has always been more than just a sport for me, it's a passion that fuels my competitive spirit and brings immense joy. I cherish every chance I get to play and look forward to continuing my journey with the game whenever possible.</p>
