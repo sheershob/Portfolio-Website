@@ -5,8 +5,35 @@ import contest2 from './assets/contest2.webp'
 import contest3 from './assets/contest3.webp'
 
 const Leetcode = () => {
-  const [stats, setStats] = useState(null); // State to hold fetched data
-  const [error, setError] = useState(null); // State to handle errors
+  const [stats, setStats] = useState(null); // Fetched OR hardcoded stats
+  const [error, setError] = useState(null); // Error handling
+
+  const hardcodedStats = {
+    data: {
+      allQuestionsCount: [
+        { difficulty: 'Easy', count: 867 },
+        { difficulty: 'Medium', count: 1813 },
+        { difficulty: 'Hard', count: 811 },
+        { difficulty: 'All', count: 3491 },
+      ],
+      matchedUser: {
+        submitStats: {
+          acSubmissionNum: [
+            { difficulty: 'Easy', count: 541, submissions: 626 },
+            { difficulty: 'Medium', count: 503, submissions: 650 },
+            { difficulty: 'Hard', count: 46, submissions: 64 },
+            { difficulty: 'All', count: 1090, submissions: 1551 },
+          ],
+          totalSubmissionNum: [
+            { difficulty: 'Easy', count: 626, submissions: 900 },
+            { difficulty: 'Medium', count: 650, submissions: 700 },
+            { difficulty: 'Hard', count: 64, submissions: 150 },
+            { difficulty: 'All', count: 1551, submissions: 1800 },
+          ],
+        },
+      },
+    },
+  };
 
   const fetchStats = async () => {
     try {
@@ -50,33 +77,41 @@ const Leetcode = () => {
         redirect: 'follow',
       };
 
-       let response = await fetch(targetUrl, requestOptions);
+      // First try without proxy
+      let response = await fetch(targetUrl, requestOptions);
       if (!response.ok) {
-        // If first fetch fails, try the second one
+        // Try with proxy
         response = await fetch(proxyUrl + targetUrl, requestOptions);
         if (!response.ok) {
-          throw new Error('Unable to fetch the User details from both sources');
+          throw new Error('Both sources failed');
         }
       }
 
       const parsedData = await response.json();
-      console.log('Logging data: ', parsedData);
-      setStats(parsedData); // Save fetched data in state
+      console.log('Logging API Data: ', parsedData);
 
+      // If data is empty or API returns error, fallback
+      if (!parsedData.data || !parsedData.data.matchedUser) {
+        throw new Error('Invalid data received');
+      }
+
+      setStats(parsedData);
     } catch (error) {
       console.error('Error fetching stats:', error);
-      setError('Failed to fetch stats. Please try again later.');
+      // setError('Failed to fetch stats. Showing default stats.');
+      // Fallback to hardcoded data
+      setStats(hardcodedStats);
     }
   };
 
   useEffect(() => {
-    fetchStats(); // Fetch stats on component mount
+    fetchStats();
   }, []);
 
   const displayData = (data) => {
     if (!data) return null;
 
-    const { matchedUser, allQuestionsCount } = data?.data || {};
+    const { matchedUser, allQuestionsCount } = data.data;
 
     return (
       <div>
@@ -91,7 +126,7 @@ const Leetcode = () => {
 
         <h2>Submission Stats:</h2>
         <ul>
-          {matchedUser?.submitStats?.acSubmissionNum.map((item, index) => (
+          {matchedUser.submitStats.acSubmissionNum.map((item, index) => (
             <li key={index}>
               {item.difficulty}:
               <ul>
