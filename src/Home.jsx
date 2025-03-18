@@ -2,7 +2,11 @@ import React from 'react'
 import pic from './assets/me.webp'
 
 const Home = () => {
-  return (
+  console.log(
+    "%cWelcome to my Portfolio Website dear developer!",
+    "color: purple; font-size: 20px; font-weight: bold; background: yellow; padding: 4px; border-radius: 5px;"
+  );  
+  return (    
     <div>
       <img src={pic} alt="profile photo" style={{width:"22vw"}} />
       <h1>About me</h1>
