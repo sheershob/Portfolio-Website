@@ -4,3 +4,17 @@ ul{
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.contest_gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    img{        
+        margin: 20px;
+        width: 55vw;
+        border: 3px solid;
+        border-color: #333;
+        border-radius: 5px;
+      }
+}

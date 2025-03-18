@@ -166,7 +166,7 @@ const Hobbies = ({ username }) => {
           <img src={football1} alt="Inter-batch football Tounament 2025" />
           <img src={football2} alt="Inter-batch football Tounament 2025" />
           <img src={football3} alt="Inter-batch football Tounament 2025" />          
-      </div>
+        </div>
       
       <h1>Lawn Tennis</h1>
       <p>I played tennis at the DDA Sports Complex Academy from Class VI to X, during which the sport became an integral part of my life. Some of my fondest memories include early mornings during vacations when my mother would drop me off at 6 AM to practice and play with friends. Over the years, I had the opportunity to participate in several tournaments, representing my school with pride. My best performance came when I secured fourth place in a zonal tournament, an achievement that remains close to my heart. Tennis has always been more than just a sport for me, it's a passion that fuels my competitive spirit and brings immense joy. I cherish every chance I get to play and look forward to continuing my journey with the game whenever possible.</p>
