@@ -11,28 +11,6 @@ import football1 from './assets/football1.webp'
 import football2 from './assets/football2.webp'
 import football3 from './assets/football3.webp'
 
-// const Hobbies = () => {
-//   return (
-//     <div>
-//       <h1>My Hobbies</h1>
-//       <h2>Chess</h2>
-//       <div class="ratingsContainer">
-//         <div class="rapid RatingsBox" id="rapid">
-//           <h3>Rapid</h3>
-//         </div>
-//         <div class="blitz RatingsBox" id="blitz">
-//           <h3>Blitz</h3>
-//         </div>
-//         <div class="bullet RatingsBox" id="bullet">
-//           <h3>Bullet</h3>
-//         </div>
-//         <div class="daily RatingsBox" id="daily">
-//           <h3>Daily</h3>
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
 
 const Hobbies = ({ username }) => {
   const [ratings, setRatings] = useState(null);
@@ -145,7 +123,7 @@ const Hobbies = ({ username }) => {
           </div>
         </div>
       )}
-      <p>Check out my <a href="https://www.chess.com/member/sheershobanerjee">chess.com</a> profile</p>
+      <p>Check out my <a href="https://www.chess.com/member/sheershobanerjee" style={{margin: '1px'}}>chess.com </a> profile</p>
       <h2>Some Tournament Victories:</h2>
       <p>Secured first place in the Inter-batch Chess Tournament on three consecutive years (2025, 2024, and 2023).</p>
       <div className="gallery">
