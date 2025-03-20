@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Navbar from './Navbar'
 import Home from './Home'
 import Leetcode from './Leetcode'
@@ -8,6 +7,7 @@ import Footer from './Footer'
 import Projects from './Projects'
 import './App.css'
 import {  BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
 
@@ -27,6 +27,7 @@ function App() {
             </main>
       <Footer />
     </Router>  
+    <Analytics />
     </>
   )
 }
