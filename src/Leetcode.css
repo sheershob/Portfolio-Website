@@ -18,3 +18,43 @@ ul{
         border-radius: 5px;
       }
 }
+
+.progress{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+    height: 198px;
+    background-color: transparent;
+    flex-wrap: wrap;
+}
+
+.circle{  
+    color: aliceblue;  
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid;
+    border-color: blue;
+    display: flex;
+    font-size: large;
+    font-weight: 700;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(var(--progress-color) var(--progress-degree, 0%), rgb(37, 31, 44) 0%);
+    transition: background 1s ease; /*Smooth transition for background */
+}
+
+#easy-progress {
+    --progress-color: green;
+}
+#medium-progress {
+    --progress-color: orange;
+}
+#hard-progress {
+    --progress-color: red;
+}
+#total-progress {
+    --progress-color: purple;
+}
