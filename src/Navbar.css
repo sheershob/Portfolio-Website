@@ -46,7 +46,7 @@
   .nav-list a:hover {
     color: darkslategray;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1020px) {
     .nav-list {
         display: none; /* Hide menu by default */
         flex-direction: column;
