@@ -40,12 +40,11 @@
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.5s ease-in-out;
   }
   
   .nav-list a:hover {
-    /* text-decoration: underline; */
-    color: blanchedalmond;
-    transition: 0.5s;
+    color: darkslategray;
   }
   @media screen and (max-width: 768px) {
     .nav-list {
@@ -78,7 +77,7 @@
 .menu-toggle div {
   width: 30px;
   height: 3px;
-  background-color: white; /* Adjust color as needed */
+  background-color: white;
   margin: 5px 0;
   transition: 0.3s;
 }
