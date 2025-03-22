@@ -101,7 +101,7 @@ const Leetcode = () => {
       {error && <p>{error}</p>}
       {!error && stats && (
         <div>
-          <h2>LeetCode Stats</h2>
+          <h2>LeetCode Stats:</h2>
 
           <div className="progress-container">
   <div className="progress-item">
@@ -147,7 +147,7 @@ const Leetcode = () => {
 
   return (
     <div>
-      <h1>LeetCode Stats</h1>
+      <h1>LeetCode</h1>
       {error && <p className="error">{error}</p>}
       {!stats && !error && <p>Loading stats...</p>}
       
