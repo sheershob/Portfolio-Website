@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Leetcode.css'
 import contest1 from './assets/contest1.webp'
 import contest2 from './assets/contest2.webp'
@@ -35,108 +35,90 @@ const Leetcode = () => {
     },
   };
 
-  const fetchStats = async () => {
-    try {
-      const username = 'sheersho_b';
-      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-      const targetUrl = 'https://leetcode.com/graphql';
+  const totalLabel = useRef(null);
+  const easyLabel = useRef(null);
+  const mediumLabel = useRef(null);
+  const hardLabel = useRef(null);
 
-      const myHeaders = new Headers();
-      myHeaders.append('Content-Type', 'application/json');
-
-      const graphql = JSON.stringify({
-        query: `
-          query userSessionProgress($username: String!) {
-            allQuestionsCount {
-              difficulty
-              count
-            }
-            matchedUser(username: $username) {
-              submitStats {
-                acSubmissionNum {
-                  difficulty
-                  count
-                  submissions
-                }
-                totalSubmissionNum {
-                  difficulty
-                  count
-                  submissions
-                }
-              }
-            }
-          }
-        `,
-        variables: { username },
-      });
-
-      const requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: graphql,
-        redirect: 'follow',
-      };
-
-      // First try without proxy
-      let response = await fetch(targetUrl, requestOptions);
-      if (!response.ok) {
-        // Try with proxy
-        response = await fetch(proxyUrl + targetUrl, requestOptions);
-        if (!response.ok) {
-          throw new Error('Both sources failed');
-        }
-      }
-
-      const parsedData = await response.json();
-      console.log('Logging API Data: ', parsedData);
-
-      // If data is empty or API returns error, fallback
-      if (!parsedData.data || !parsedData.data.matchedUser) {
-        throw new Error('Invalid data received');
-      }
-
-      setStats(parsedData);
-    } catch (error) {
-      console.error('Error fetching stats:', error);
-      // setError('Failed to fetch stats. Showing default stats.');
-      // Fallback to hardcoded data
-      setStats(hardcodedStats);
-    }
-  };
+  const totalProgressCircle = useRef(null);
+  const easyProgressCircle = useRef(null);
+  const mediumProgressCircle = useRef(null);
+  const hardProgressCircle = useRef(null);
 
   useEffect(() => {
     fetchStats();
   }, []);
 
+  const fetchStats = async () => {
+    try {
+      const username = 'sheersho_b';
+      const url = `https://leetcode-stats-api.herokuapp.com/${username}`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Unable to fetch the User details');
+      }
+
+      const parsedData = await response.json();
+      console.log('Logging data: ', parsedData);
+      setStats(parsedData); // Save stats to state
+      updateAllProgress(parsedData);
+    } catch (err) {
+      console.error('Error fetching stats:', err);
+      setError('Failed to fetch stats.');
+    }
+  };
+
+  const updateProgress = (solved, total, labelRef, circleRef) => {
+    const progressDegree = (solved / total) * 100;
+    if (circleRef.current && labelRef.current) {
+      circleRef.current.style.setProperty('--progress-degree', `${progressDegree}%`);
+      circleRef.current.style.animation = 'progressAnimation 1s ease forwards';
+      labelRef.current.textContent = `${solved} / ${total}`;
+    }
+  };
+
+  const updateAllProgress = (data) => {
+    updateProgress(data.totalSolved, data.totalQuestions, totalLabel, totalProgressCircle);
+    updateProgress(data.easySolved, data.totalEasy, easyLabel, easyProgressCircle);
+    updateProgress(data.mediumSolved, data.totalMedium, mediumLabel, mediumProgressCircle);
+    updateProgress(data.hardSolved, data.totalHard, hardLabel, hardProgressCircle);
+  };
+
   const displayData = (data) => {
     if (!data) return null;
 
-    const { matchedUser, allQuestionsCount } = data.data;
+    // const { matchedUser, allQuestionsCount } = data.data;
 
     return (
-      <div>
-        <h2>All Questions Count:</h2>
-        <ul>
-          {allQuestionsCount.map((item, index) => (
-            <li key={index}>
-              {item.difficulty}: {item.count}
-            </li>
-          ))}
-        </ul>
+      <div className="leetcode-stats">
+      {error && <p>{error}</p>}
+      {!error && stats && (
+        <div>
+          <h2>LeetCode Stats</h2>
 
-        <h2>Submission Stats:</h2>
-        <ul>
-          {matchedUser.submitStats.acSubmissionNum.map((item, index) => (
-            <li key={index}>
-              {item.difficulty}:
-              <ul>
-                <li>Accepted Count: {item.count}</li>
-                <li>Submissions: {item.submissions}</li>
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </div>
+          <div className="progress-container">
+              <div id="total-progress" className="progress-circle" ref={totalProgressCircle}>
+                <div className="label" ref={totalLabel}></div>
+              </div>
+              <div id="easy-progress" className="progress-circle" ref={easyProgressCircle}>
+                <div className="label" ref={easyLabel}></div>
+              </div>
+              <div id="medium-progress" className="progress-circle" ref={mediumProgressCircle}>
+                <div className="label" ref={mediumLabel}></div>
+              </div>
+              <div id="hard-progress" className="progress-circle" ref={hardProgressCircle}>
+                <div className="label" ref={hardLabel}></div>
+              </div>
+            </div>
+          <ul>
+            <li>Acceptance Rate: {stats.acceptanceRate}%</li>
+            <li>Ranking: {stats.ranking}</li>
+            <li>Leetcode coins: {stats.contributionPoints}</li>
+            <li>Reputation: {stats.reputation}</li>
+          </ul>
+        </div>
+      )}
+    </div>
     );
   };
 
@@ -145,8 +127,9 @@ const Leetcode = () => {
       <h1>LeetCode Stats</h1>
       {error && <p className="error">{error}</p>}
       {!stats && !error && <p>Loading stats...</p>}
-      { <h2>Peak contest rating after 70+ contests: 1752</h2> }
+      
       {stats && displayData(stats)}
+      { <h2>Peak contest rating after 70+ contests: 1752</h2> }
       <p>
       I began practicing DSA questions on Leetcode around mid-2023, primarily solving problems in Java and later in C++ and Python to strengthen my grasp of other languages. 
       I chose Java as my primary language, recognizing its significant value and widespread use in the industry. Additionally, I have tackled database-related questions using MySQL, which has helped me deepen my understanding of data management and explore various perspectives on structuring and querying data efficiently.
