@@ -1,4 +1,5 @@
 import React from 'react'
+import './Home.css'
 import pic from './assets/me.webp'
 
 const Home = () => {
@@ -8,7 +9,7 @@ const Home = () => {
   );  
   return (    
     <div>
-      <img src={pic} alt="profile photo" style={{width:"22vw"}} />
+      <img src={pic} alt="profile photo" />
       <h1>About me</h1>
       <p>
 I was born in New Delhi in 2001 and spent a part of my early childhood in the UAE, where I lived for six years before returning to India. 

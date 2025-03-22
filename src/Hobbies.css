@@ -72,3 +72,19 @@
   a{
     margin: 0;
   }
+
+  @media (max-width: 830px){
+    .gallery{
+      img{
+        width: 40vw;
+      }
+    }
+  }
+
+  @media (max-width: 770px){
+    .gallery{
+      img{
+        width: 70vw;
+      }
+    }
+  }
