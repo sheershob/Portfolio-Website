@@ -47,6 +47,10 @@
     color: darkslategray;
   }
   @media screen and (max-width: 1020px) {
+    .site-name{
+      font-size: 2rem;
+    }
+
     .nav-list {
         display: none; /* Hide menu by default */
         flex-direction: column;
@@ -66,6 +70,7 @@
 
     .menu-toggle {
         display: flex !important;
+        margin-right: 24px;
     }
 }
 .menu-toggle {
@@ -82,7 +87,6 @@
   transition: 0.3s;
 }
 
-/* Make the menu visible on small screens */
 /* @media screen and (max-width: 768px) {
   .menu-toggle {
       display: flex;
