@@ -76,7 +76,7 @@ ul{
    @media (max-width: 970px) {
     .progress-container {
       align-items: center;
-      margin-bottom: 30vh;
+      margin-bottom: 260px;
     }
 
     .contest_gallery{
@@ -87,9 +87,15 @@ ul{
     }
   }  
   
-/* @media (max-width: 874px){
+@media (max-width: 554px){
     .progress-container {
         align-items: center;
-        margin-bottom: 30vh;
+        margin-bottom: 760px;
       }
-} */
+
+      .contest_gallery{
+        img{
+            margin: 10px 0px 10px 0px;
+        }
+    }
+}
