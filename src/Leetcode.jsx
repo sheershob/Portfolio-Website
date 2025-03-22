@@ -5,7 +5,16 @@ import contest2 from './assets/contest2.webp'
 import contest3 from './assets/contest3.webp'
 
 const Leetcode = () => {
-  const [stats, setStats] = useState(null); // Fetched OR hardcoded stats
+  const [stats, setStats] = useState({
+    totalSolved: 0,
+    totalQuestions: 0,
+    easySolved: 0,
+    totalEasy: 0,
+    mediumSolved: 0,
+    totalMedium: 0,
+    hardSolved: 0,
+    totalHard: 0,
+  });
   const [error, setError] = useState(null); // Error handling
 
   const hardcodedStats = {
@@ -87,8 +96,6 @@ const Leetcode = () => {
   const displayData = (data) => {
     if (!data) return null;
 
-    // const { matchedUser, allQuestionsCount } = data.data;
-
     return (
       <div className="leetcode-stats">
       {error && <p>{error}</p>}
@@ -97,19 +104,35 @@ const Leetcode = () => {
           <h2>LeetCode Stats</h2>
 
           <div className="progress-container">
-              <div id="total-progress" className="progress-circle" ref={totalProgressCircle}>
-                <div className="label" ref={totalLabel}></div>
-              </div>
-              <div id="easy-progress" className="progress-circle" ref={easyProgressCircle}>
-                <div className="label" ref={easyLabel}></div>
-              </div>
-              <div id="medium-progress" className="progress-circle" ref={mediumProgressCircle}>
-                <div className="label" ref={mediumLabel}></div>
-              </div>
-              <div id="hard-progress" className="progress-circle" ref={hardProgressCircle}>
-                <div className="label" ref={hardLabel}></div>
-              </div>
-            </div>
+  <div className="progress-item">
+    <div className="category-label">Total</div>
+    <div id="total-progress" className="progress-circle" ref={totalProgressCircle}>
+      <div className="label" ref={totalLabel}></div>
+    </div>
+  </div>
+  
+  <div className="progress-item">
+    <div className="category-label">Easy</div>
+    <div id="easy-progress" className="progress-circle" ref={easyProgressCircle}>
+      <div className="label" ref={easyLabel}></div>
+    </div>
+  </div>
+
+  <div className="progress-item">
+    <div className="category-label">Medium</div>
+    <div id="medium-progress" className="progress-circle" ref={mediumProgressCircle}>
+      <div className="label" ref={mediumLabel}></div>
+    </div>
+  </div>
+
+  <div className="progress-item">
+    <div className="category-label">Hard</div>
+    <div id="hard-progress" className="progress-circle" ref={hardProgressCircle}>
+      <div className="label" ref={hardLabel}></div>
+    </div>
+  </div>
+</div>
+
           <ul>
             <li>Acceptance Rate: {stats.acceptanceRate}%</li>
             <li>Ranking: {stats.ranking}</li>

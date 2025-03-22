@@ -19,6 +19,19 @@ ul{
       }
 }
 
+ .progress-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .category-label {
+    color: aliceblue;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+
 .progress-container {
     display: flex;
     flex-direction: row;
@@ -42,7 +55,7 @@ ul{
     align-items: center;
     justify-content: center;
     background: conic-gradient(var(--progress-color) var(--progress-degree, 0%), rgb(37, 31, 44) 0%);
-    transition: background 1s ease; /* Smooth transition for background */
+    transition: background 1s ease; 
   }
   
   #easy-progress {
@@ -56,5 +69,19 @@ ul{
   }
   #total-progress {
     --progress-color: purple;
-  }
+  } 
+
+  
+  /* ---- Media Query for Mobile Responsiveness ---- */
+  /* @media (max-width: 768px) {
+    .progress {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .circle {
+      width: 140px;
+      height: 140px;
+    }
+  }  */ 
   
