@@ -6,4 +6,4 @@ I've also used modern day image formats such as WebP which offers superior lossl
 
 The website is fully responsive, ensuring optimal viewing on all devices.
 
-Daily website traffic is monitored using Vercel Analytics.
+Daily website traffic is monitored using Vercel Analytics. Real Experience Score (RES) for the users is monitored using Vercel's Speed Insights which measures various performance metrics like speed, responsiveness, and stability. These metrics are directly related to SEO.
