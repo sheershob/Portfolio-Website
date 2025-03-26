@@ -20,7 +20,18 @@ This journey has shaped my academic and personal growth, fueling my passion for 
       <p>I possess a strong technical skill set, including proficiency in Android app development in Java and Kotlin, Front-end web development (HTML, CSS, JavaScript, and React); Data Structures and Algorithms, and Object Oriented Programming in C++ and Java. I also have a good understanding of Operating Systems and am comfortable in both Windows and Linux.
         </p>
         <p>
-          Additionally, I am a sporty and adventurous individual. I used to play tennis in my school days and participated in zonal tournaments. Now, I mostly play football and ocassionaly badminton. Since the lockdown, I have been playing chess quite often and am rated at about 1950 rapid on chess.com and 2050 on Lichess. I also have a keen interest in world geography. I do play Geoguessr and other Geography games like TimeGuessr, WhereTaken, Worldle, Countryle, Globle, Flagle.
+          Additionally, I am a sporty and adventurous individual. I used to play tennis in my school days and participated in zonal tournaments. Now, I mostly play football and ocassionaly badminton. Since the lockdown, I have been playing chess quite often and am rated at about 1950 rapid on chess.com and 2050 on Lichess.
+           I also have a keen interest in world geography. I do play Geoguessr and other Geography games like 
+           <a href="https://timeguessr.com/" target="_blank" rel="noopener noreferrer">TimeGuessr</a>, 
+           <a href="https://wheretaken.teuteuf.fr/" target="_blank" rel="noopener noreferrer">WhereTaken</a>, 
+           <a href="https://worldle.teuteuf.fr/" target="_blank" rel="noopener noreferrer">Worldle</a>, 
+           <a href="https://countryle.com/" target="_blank" rel="noopener noreferrer">Countryle</a>, 
+           <a href="https://globle-game.com/" target="_blank" rel="noopener noreferrer">Globle</a>, and 
+           <a href="https://flagle.io/" target="_blank" rel="noopener noreferrer">Flagle</a>.
+        </p>
+        <p>
+        I'm a polyglot with fluency in English, Hindi, and Bangla. My four years of 
+        French in school has given me a solid foundation, and I can also understand basic phrases in Punjabi, Urdu, Spanish, and Arabic.
         </p>
     </div>
   )

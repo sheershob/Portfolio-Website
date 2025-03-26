@@ -1,6 +1,11 @@
 img{
     width: 22vw;
 }
+p{
+    a{
+    margin: 5px;
+    }
+}
 @media (max-width: 600px) {
     img{
         width: 40vw;
