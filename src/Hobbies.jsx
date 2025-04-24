@@ -136,7 +136,7 @@ const Hobbies = ({ username }) => {
       </div>
 
       <h1>Football</h1>
-      <p>My football journey spans years, from playing in local parks and schools to structured competitions college. Primarily a defender, I leverage my reach to effectively disrupt opposing plays.  
+      <p>My football journey spans years, from playing in local parks and schools to structured competitions in college. Primarily a defender, I leverage my reach to effectively disrupt opposing plays.  
         Recently, I had the privilege of captaining my batch in the 2025 inter-batch sports tournament in JNU, an experience that re-ignited my passion for the sport.  
         Beyond the thrill of the game, football has been an invaluable tool for maintaining peak physical fitness.</p>
 
